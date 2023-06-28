@@ -9,49 +9,54 @@
 
     <ImageView
         android:id="@+id/img_story"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="415dp"
+        android:layout_height="410dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description"
         android:scaleType="fitXY"
+        android:transitionName="@string/image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/backgrounds/scenic"
-        android:transitionName="@string/image"/>
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/tvname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="25sp"
+        android:transitionName="@string/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_story"
+        tools:text="@string/name" />
 
 
-        <TextView
-            android:id="@+id/tvname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:fontFamily="sans-serif-black"
-            android:textSize="25sp"
-            android:transitionName="@string/name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_story"
-            tools:text="@string/name" />
-
-        <TextView
-            android:id="@+id/tv_created_at"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="sans-serif"
-            android:transitionName="@string/date"
-            app:layout_constraintStart_toStartOf="@+id/tvname"
-            app:layout_constraintTop_toBottomOf="@+id/tvname"
-            tools:text="@string/date"
-            tools:textSize="11sp" />
+    <TextView
+        android:id="@+id/tv_created_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:transitionName="@string/date"
+        app:layout_constraintBottom_toTopOf="@+id/tvname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.737"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_story"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="@string/date"
+        tools:textSize="11sp" />
 
     <View
         android:id="@+id/view"
         android:layout_width="364dp"
         android:layout_height="3dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="44dp"
         android:alpha="0"
         android:background="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +65,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_created_at"
         tools:alpha="1" />
 
-
     <TextView
         android:id="@+id/tv_description"
         android:layout_width="0dp"
@@ -68,9 +72,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:background="@color/green"
         android:alpha="0"
         android:fontFamily="sans-serif"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"

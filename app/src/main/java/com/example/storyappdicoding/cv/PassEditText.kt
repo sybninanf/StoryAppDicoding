@@ -44,7 +44,7 @@ class PassEditText : AppCompatEditText {
             if (text?.isEmpty() == true) {
                 setErrorMessage(context.getString(R.string.must_not_empty))
             } else {
-                if ((text?.length ?: 0) < 6) {
+                if ((text?.length ?: 0) < 8) {
                     setErrorMessage(context.getString(R.string.more_than_character))
                 } else {
                     hideErrorMessage()

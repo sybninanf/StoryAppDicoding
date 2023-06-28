@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StoryAppDicoding</string>
+    <string name="app_name">Story App Dicoding</string>
     <string name="image">image</string>
     <string name="name">Name</string>
     <string name="image_description">Picture of %1$s</string>
@@ -46,4 +46,19 @@
     <string name="retry">Retry</string>
     <string name="enter_email">Enter Email</string>
     <string name="not_type_email">Wrong Email Format (@)</string>
+    <string name="title_activity_maps">Maps Activity</string>
+    <string name="normal_type">Normal Type\n</string>
+    <string name="satellite_type">Satelite\n</string>
+    <string name="terrain_type">Terain</string>
+    <string name="hybrid_type">Hybrid</string>
+    <string name="marker_in">Marker in %1$s</string>
+    <string name="app_widget_description">Widget Description\n</string>
+    <string name="title_activity_user_maps">Maps</string>
+    <string name="appwidget_text">Story App Dicoding\n</string>
+    <string name="empty_text">No Data</string>
+    <string name="nightmode">modeswift\n</string>
+    <string name="profile">Profile\n</string>
+    <string name="ina">Syabina Nur Pajriyanti\n</string>
+    <string name="inamail">sybninanf26@gmail.com</string>
+    <string name="title_activity_maps2">MapsActivity2</string>
 </resources>

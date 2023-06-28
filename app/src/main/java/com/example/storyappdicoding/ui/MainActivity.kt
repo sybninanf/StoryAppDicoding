@@ -1,7 +1,6 @@
 package com.example.storyappdicoding.ui
 
 import android.content.Intent
-import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +18,8 @@ import com.example.storyappdicoding.api.models.User
 import com.example.storyappdicoding.autentikasi.login.LoginActivity
 import com.example.storyappdicoding.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.lifecycle.observe
+import java.io.File
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         viewModel.getUser {
             user = it
         }
@@ -47,12 +49,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         setupRecyclerData()
-        getStories()
         showLoading()
+        getStory()
+
     }
 
     @OptIn(ExperimentalPagingApi::class)
-    private fun getStories() {
+    private fun getStory() {
         val token = user?.tokenBearer.toString()
         viewModel.getStories(token) {
             Log.d(TAG, "onCreate: $it")
@@ -66,11 +69,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     private fun setupRecyclerData() {
         mAdapter = MainAdapter()
         binding.rvStories.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
-            setHasFixedSize(true)
+            setHasFixedSize(false)
             adapter = mAdapter.withLoadStateFooter(
                 footer = LoadingStateAdap{
                     mAdapter.retry()
@@ -93,12 +97,22 @@ class MainActivity : AppCompatActivity() {
                     startActivity(it)
                 }
             }
+            R.id.location -> {
+                Intent(this@MainActivity, MapsActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
+            R.id.profile -> {
+                Intent(this@MainActivity, ProfileActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
         }
         return true
     }
 
     private fun reGetStory() {
-        getStories()
+        getStory()
         setupRecyclerData()
     }
 

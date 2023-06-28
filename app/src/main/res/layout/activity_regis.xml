@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
+            android:textStyle="bold"
             android:text="@string/register"
             android:textSize="25sp"
             android:alpha="0"
@@ -135,6 +136,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
+            android:textColor="@color/white"
             android:text="@string/register"
             android:textAllCaps="false"
             android:alpha="0"
@@ -173,6 +175,7 @@
 
         <ProgressBar
             android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
